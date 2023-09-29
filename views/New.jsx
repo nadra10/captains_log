@@ -1,25 +1,22 @@
+
+
 import React from 'react';
 
-function New() {
-  return (
-    <form action="/logs" method="POST">
-      <div>
-        <label>Title:</label>
-        <input type="text" name="title" />
-      </div>
-      <div>
-        <label>Entry:</label>
-        <textarea name="entry"></textarea>
-      </div>
-      <div>
-  <label>Ship is Broken:</label>
-  <input type="checkbox" name="shipIsBroken" value="true" />
-</div>
-      <div>
-        <input type="submit" value="Submit" />
-      </div>
-    </form>
-  );
+class New extends React.Component {
+    render() {
+        return (
+            <div>
+                <h1>New Log page</h1>
+                <form action="/logs" method="POST">
+                    Title: <input type="text" name="title" /><br />
+                    Entry: <textarea name="entry"></textarea><br />
+                    Ship is Broken: <input type="checkbox" name="shipIsBroken" value="true" /><br />
+                    <input type="submit" value="Create Log" />
+                </form>
+                <a href="/logs">Back to Logs</a>
+            </div>
+        );
+    }
 }
 
 export default New;
